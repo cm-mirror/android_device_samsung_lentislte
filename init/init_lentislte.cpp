@@ -60,18 +60,36 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
 
     property_get("ro.bootloader", bootloader);
 
+    if (strstr(bootloader, "G906S")) {
+        /* lentislteskt */
+        property_set("ro.build.fingerprint", "samsung/lentislteskt/lentislteskt:6.0.1/MMB29U/G906SKSU1BOI5:user/release-keys");
+        property_set("ro.build.description", "lentislteskt-user 6.0.1 MMB29U G906SKSU1BOI5 release-keys");
+        property_set("ro.product.model", "SM-G906S");
+        property_set("ro.product.device", "lentislteskt");
+        gsm_properties();
+    }
+
     if (strstr(bootloader, "G906K")) {
-        property_set("ro.build.fingerprint", "samsung/lentisltektt/lentisltektt:6.0.1/LRX22C/G906KKTU1BOI5:user/release-keys");
-        property_set("ro.build.description", "lentisltektt-user 6.0.1 LRX22C G906KKTU1BOI5 release-keys");
+        /* lentisltektt */
+        property_set("ro.build.fingerprint", "samsung/lentisltektt/lentisltektt:6.0.1/MMB29U/G906KKSU1BOI5:user/release-keys");
+        property_set("ro.build.description", "lentisltektt-user 6.0.1 MMB29U G906KKSU1BOI5 release-keys");
         property_set("ro.product.model", "SM-G906K");
         property_set("ro.product.device", "lentisltektt");
+        gsm_properties();
+    }
+    if (strstr(bootloader, "G901F")) {
+        /* kccat6 */
+        property_set("ro.build.fingerprint", "samsung/kccat6xx/kccat6:6.0.1/MMB29U/G901FXXU1BOK2:user/release-keys");
+        property_set("ro.build.description", "kccat6xx-user 6.0.1 MMB29U G901FXXU1BOK2 release-keys");
+        property_set("ro.product.model", "SM-G901F");
+        property_set("ro.product.device", "kccat6xx");
         gsm_properties();
     } else if (strstr(bootloader, "G906S")) {
         property_set("ro.build.fingerprint", "samsung/lentislteskt/lentislteskt:6.0.1/MRA58K/G906SKSU1BOI5:user/release-keys");
         property_set("ro.build.description", "lentislteskt-user 6.0.1 MRA58K G906SKSU1BOI5 release-keys");
         property_set("ro.product.model", "SM-G906S");
         property_set("ro.product.device", "lentislteskt");
-        gsm_properties();
+        gsm_properties();		
     } else {
         property_set("ro.build.fingerprint", "samsung/lentisltelgt/lentisltelgt:6.0.1/KVT49L/G906LKLU1ANG8:user/release-keys");
         property_set("ro.build.description", "lentisltelgt-user 6.0.1 KVT49L G906LKLU1ANG8 release-keys");
